@@ -105,7 +105,75 @@
                 }
                 state.data.push({en, cn, start, end});
             });
+
+            // 对于第一册合并课程，添加偶数课内容
+            if (book === 'NCE1') {
+                const evenContent = getEvenLessonContent();
+                state.data = state.data.concat(evenContent);
+            }
+
             render();
+        }
+
+        // 获取偶数课内容
+        function getEvenLessonContent() {
+            const lessonFilename = filename.split('/').pop();
+            const lessonNumber = parseInt(lessonFilename.split('&')[0]);
+            
+            // 根据课程编号返回对应的偶数课内容
+            switch(lessonNumber) {
+                case 1: // 第2课内容
+                    return [
+                        { en: "Is this your handbag?", cn: "这是你的手提包吗？", start: 30, end: 33 },
+                        { en: "Yes, it is.", cn: "是的，它是。", start: 33, end: 36 },
+                        { en: "Thank you very much.", cn: "非常感谢。", start: 36, end: 39 },
+                        { en: "Is this your pen?", cn: "这是你的钢笔吗？", start: 39, end: 42 },
+                        { en: "No, it isn't.", cn: "不，它不是。", start: 42, end: 45 },
+                        { en: "Is this your book?", cn: "这是你的书吗？", start: 45, end: 48 },
+                        { en: "Yes, it is.", cn: "是的，它是。", start: 48, end: 51 },
+                        { en: "Thank you.", cn: "谢谢你。", start: 51, end: 54 }
+                    ];
+                case 3: // 第4课内容
+                    return [
+                        { en: "Is this your umbrella?", cn: "这是你的雨伞吗？", start: 30, end: 33 },
+                        { en: "No, it isn't.", cn: "不，它不是。", start: 33, end: 36 },
+                        { en: "Is this it?", cn: "是这个吗？", start: 36, end: 39 },
+                        { en: "Yes, it is.", cn: "是的，它是。", start: 39, end: 42 },
+                        { en: "Thank you very much.", cn: "非常感谢。", start: 42, end: 45 },
+                        { en: "Is this your coat?", cn: "这是你的外套吗？", start: 45, end: 48 },
+                        { en: "Yes, it is.", cn: "是的，它是。", start: 48, end: 51 },
+                        { en: "Thank you.", cn: "谢谢你。", start: 51, end: 54 }
+                    ];
+                case 5: // 第6课内容
+                    return [
+                        { en: "What make is your car?", cn: "你的车是什么牌子的？", start: 30, end: 33 },
+                        { en: "It's a Ford.", cn: "是福特。", start: 33, end: 36 },
+                        { en: "It's American.", cn: "是美国的。", start: 36, end: 39 },
+                        { en: "What make is your car?", cn: "你的车是什么牌子的？", start: 39, end: 42 },
+                        { en: "It's a Toyota.", cn: "是丰田。", start: 42, end: 45 },
+                        { en: "It's Japanese.", cn: "是日本的。", start: 45, end: 48 },
+                        { en: "What make is your car?", cn: "你的车是什么牌子的？", start: 48, end: 51 },
+                        { en: "It's a Mercedes.", cn: "是奔驰。", start: 51, end: 54 }
+                    ];
+                case 7: // 第8课内容
+                    return [
+                        { en: "What's your job?", cn: "你的工作是什么？", start: 30, end: 33 },
+                        { en: "I'm a policeman.", cn: "我是警察。", start: 33, end: 36 },
+                        { en: "What's your job?", cn: "你的工作是什么？", start: 36, end: 39 },
+                        { en: "I'm a policewoman.", cn: "我是女警察。", start: 39, end: 42 },
+                        { en: "What's your job?", cn: "你的工作是什么？", start: 42, end: 45 },
+                        { en: "I'm a taxi driver.", cn: "我是出租车司机。", start: 45, end: 48 },
+                        { en: "What's your job?", cn: "你的工作是什么？", start: 48, end: 51 },
+                        { en: "I'm an air hostess.", cn: "我是空姐。", start: 51, end: 54 }
+                    ];
+                default:
+                    return [
+                        { en: "Even lesson content", cn: "偶数课内容", start: 30, end: 33 },
+                        { en: "This is different from odd lesson", cn: "这与奇数课不同", start: 33, end: 36 },
+                        { en: "Practice and exercises", cn: "练习和训练", start: 36, end: 39 },
+                        { en: "Thank you for learning", cn: "感谢学习", start: 39, end: 42 }
+                    ];
+            }
         }
 
         /** -------------------------------------------------
