@@ -136,20 +136,22 @@
             // 对于第一册偶数课，显示偶数课内容
             if (book === 'NCE1' && lessonType === 'even') {
                 // 显示偶数课内容
-                const lessonContent = getEvenLessonContent();
-                if (lessonContent) {
-                    content.innerHTML = `<div class="sentence">
-                        <div class="en">${lessonContent}</div>
-                        <div class="cn">这是偶数课的内容，与奇数课不同</div>
-                    </div>`;
-                } else {
-                    content.innerHTML = `<div class="sentence">
-                        <div class="en">Even lesson content will be displayed here</div>
-                        <div class="cn">偶数课内容将在这里显示</div>
-                    </div>`;
-                }
+                getEvenLessonContent().then(evenContent => {
+                    if (evenContent) {
+                        content.innerHTML = `<div class="sentence">
+                            <div class="en">${evenContent}</div>
+                            <div class="cn">这是偶数课的内容，与奇数课不同</div>
+                        </div>`;
+                    } else {
+                        // 如果没有专门的偶数课内容，显示提示信息
+                        content.innerHTML = `<div class="sentence">
+                            <div class="en">Even lesson content is being prepared</div>
+                            <div class="cn">偶数课内容正在准备中，敬请期待</div>
+                        </div>`;
+                    }
+                });
             } else {
-                // 正常显示LRC内容
+                // 正常显示LRC内容（奇数课或其他册）
                 content.innerHTML = state.data.map(
                     (item, idx) =>
                         `<div class="sentence" data-idx="${idx}">
@@ -161,10 +163,49 @@
         }
 
         // 获取偶数课内容
-        function getEvenLessonContent() {
-            // 这里需要从数据中获取偶数课内容
-            // 暂时返回示例内容
-            return "This is even lesson content. It should be different from odd lesson content.";
+        async function getEvenLessonContent() {
+            // 从数据中获取偶数课内容
+            const lessonFilename = filename.split('/').pop();
+            const lessonNumber = parseInt(lessonFilename.split('&')[0]);
+            const lessonIndex = Math.floor((lessonNumber - 1) / 2);
+            
+            // 获取课程数据
+            const lessons = await getLessonsData();
+            if (lessons && lessons[1] && lessons[1][lessonIndex]) {
+                const lesson = lessons[1][lessonIndex];
+                if (lesson.evenContent) {
+                    return lesson.evenContent;
+                }
+            }
+            
+            // 如果没有专门的偶数课内容，返回默认内容
+            switch(lessonNumber) {
+                case 1: return "Is this your handbag? Yes, it is. Thank you very much.";
+                case 3: return "Sorry sir. Is this your umbrella? No, it isn't. Is this it? Yes, it is. Thank you very much.";
+                case 5: return "What make is it? It's a Volvo. It's Swedish. What make is it? It's a Peugeot. It's French.";
+                case 7: return "What's your job? I'm a policeman. What's your job? I'm a policewoman. What's your job? I'm a taxi driver.";
+                default: return "Even lesson content is being prepared. This is different from the odd lesson content.";
+            }
+        }
+
+        // 获取课程数据
+        let lessonsDataCache = null;
+        async function getLessonsData() {
+            if (lessonsDataCache) {
+                return lessonsDataCache;
+            }
+            
+            try {
+                const dataSrc = 'static/data.json';
+                const dataRes = await fetch(dataSrc);
+                if (dataRes.ok) {
+                    lessonsDataCache = await dataRes.json();
+                    return lessonsDataCache;
+                }
+            } catch (error) {
+                console.error('Failed to load lesson data:', error);
+            }
+            return null;
         }
 
         /** -------------------------------------------------
