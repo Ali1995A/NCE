@@ -90,11 +90,11 @@
                         
                         // 奇数课
                         const oddLessonElement = document.createElement('a');
-                        oddLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
+                        oddLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}?type=odd`;
                         oddLessonElement.className = 'lesson-item';
                         oddLessonElement.innerHTML = `
                             <span class="lesson-number">第${oddLessonNumber}课</span>
-                            <span class="lesson-title">${lesson.title || '未知课程'}</span>
+                            <span class="lesson-title">${lesson.oddTitle || lesson.title || '未知课程'}</span>
                         `;
                         // 添加进度保存
                         oddLessonElement.addEventListener('click', () => {
@@ -105,11 +105,11 @@
                         // 偶数课（如果存在）
                         if (evenLessonNumber <= 144) {
                             const evenLessonElement = document.createElement('a');
-                            evenLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
+                            evenLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}?type=even`;
                             evenLessonElement.className = 'lesson-item';
                             evenLessonElement.innerHTML = `
                                 <span class="lesson-number">第${evenLessonNumber}课</span>
-                                <span class="lesson-title">${lesson.title || '未知课程'}</span>
+                                <span class="lesson-title">${lesson.evenTitle || lesson.title || '未知课程'}</span>
                             `;
                             // 添加进度保存
                             evenLessonElement.addEventListener('click', () => {

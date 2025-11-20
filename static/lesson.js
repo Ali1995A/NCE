@@ -20,6 +20,10 @@
         const bookImgSrc = `images/${book}.jpg`;
         const mp3Src = `${filename}.mp3`;
         const lrcSrc = `${filename}.lrc`;
+        
+        // 解析URL参数判断是奇数课还是偶数课
+        const urlParams = new URLSearchParams(location.hash.split('?')[1]);
+        const lessonType = urlParams.get('type') || 'odd'; // odd 或 even
 
         // 保存学习进度
         function saveStudyProgress() {
@@ -114,15 +118,53 @@
         function render() {
             bookEl.href = bookScr;
             bookTitleEl.textContent = state.album;
-            lessonTitleEl.textContent = state.title;
+            
+            // 根据课程类型设置标题
+            if (book === 'NCE1') {
+                // 对于第一册，根据课程类型显示不同的标题
+                const lessonNumber = filename.split('/').pop().split('&')[0];
+                const lessonNum = parseInt(lessonNumber);
+                if (lessonType === 'even') {
+                    lessonTitleEl.textContent = `第${lessonNum + 1}课`;
+                } else {
+                    lessonTitleEl.textContent = `第${lessonNum}课`;
+                }
+            } else {
+                lessonTitleEl.textContent = state.title;
+            }
 
-            content.innerHTML = state.data.map(
-                (item, idx) =>
-                    `<div class="sentence" data-idx="${idx}">
-                    <div class="en">${item.en}</div>
-                    <div class="cn">${item.cn}</div>
-                </div>`
-            ).join('');
+            // 对于第一册偶数课，显示偶数课内容
+            if (book === 'NCE1' && lessonType === 'even') {
+                // 显示偶数课内容
+                const lessonContent = getEvenLessonContent();
+                if (lessonContent) {
+                    content.innerHTML = `<div class="sentence">
+                        <div class="en">${lessonContent}</div>
+                        <div class="cn">这是偶数课的内容，与奇数课不同</div>
+                    </div>`;
+                } else {
+                    content.innerHTML = `<div class="sentence">
+                        <div class="en">Even lesson content will be displayed here</div>
+                        <div class="cn">偶数课内容将在这里显示</div>
+                    </div>`;
+                }
+            } else {
+                // 正常显示LRC内容
+                content.innerHTML = state.data.map(
+                    (item, idx) =>
+                        `<div class="sentence" data-idx="${idx}">
+                        <div class="en">${item.en}</div>
+                        <div class="cn">${item.cn}</div>
+                    </div>`
+                ).join('');
+            }
+        }
+
+        // 获取偶数课内容
+        function getEvenLessonContent() {
+            // 这里需要从数据中获取偶数课内容
+            // 暂时返回示例内容
+            return "This is even lesson content. It should be different from odd lesson content.";
         }
 
         /** -------------------------------------------------
