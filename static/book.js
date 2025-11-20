@@ -84,39 +84,24 @@
             lessons.forEach((lesson, index) => {
                 try {
                     if (bookNumber === 1) {
-                        // 第一册：每项包含两课，分别显示奇数课和偶数课
-                        const oddLessonNumber = index * 2 + 1;
-                        const evenLessonNumber = index * 2 + 2;
+                        // 第一册：每项包含两课，合并显示为一课（如第1-2课、第3-4课等）
+                        const lessonNumber = index + 1;
+                        const startLessonNumber = index * 2 + 1;
+                        const endLessonNumber = index * 2 + 2;
                         
-                        // 奇数课
-                        const oddLessonElement = document.createElement('a');
-                        oddLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}?type=odd`;
-                        oddLessonElement.className = 'lesson-item';
-                        oddLessonElement.innerHTML = `
-                            <span class="lesson-number">第${oddLessonNumber}课</span>
-                            <span class="lesson-title">${lesson.oddTitle || lesson.title || '未知课程'}</span>
+                        // 合并课程
+                        const lessonElement = document.createElement('a');
+                        lessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
+                        lessonElement.className = 'lesson-item';
+                        lessonElement.innerHTML = `
+                            <span class="lesson-number">第${startLessonNumber}-${endLessonNumber}课</span>
+                            <span class="lesson-title">${lesson.title || '未知课程'}</span>
                         `;
                         // 添加进度保存
-                        oddLessonElement.addEventListener('click', () => {
+                        lessonElement.addEventListener('click', () => {
                             saveStudyProgress(`NCE${bookNumber}`, lesson.filename);
                         });
-                        container.appendChild(oddLessonElement);
-                        
-                        // 偶数课（如果存在）
-                        if (evenLessonNumber <= 144) {
-                            const evenLessonElement = document.createElement('a');
-                            evenLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}?type=even`;
-                            evenLessonElement.className = 'lesson-item';
-                            evenLessonElement.innerHTML = `
-                                <span class="lesson-number">第${evenLessonNumber}课</span>
-                                <span class="lesson-title">${lesson.evenTitle || lesson.title || '未知课程'}</span>
-                            `;
-                            // 添加进度保存
-                            evenLessonElement.addEventListener('click', () => {
-                                saveStudyProgress(`NCE${bookNumber}`, lesson.filename);
-                            });
-                            container.appendChild(evenLessonElement);
-                        }
+                        container.appendChild(lessonElement);
                     } else {
                         // 其他册：正常显示
                         const lessonNumber = index + 1;
