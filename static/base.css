@@ -23,6 +23,7 @@ hr{
     text-align: center;
     color: white;
     padding: 20px 0;
+    position: relative;
 }
 
 .header h1 {
@@ -37,6 +38,36 @@ hr{
     font-size: 0.8em;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.3s both;
+    margin-bottom: 15px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.nav-button:active {
+    transform: translateY(0);
 }
 
 .book-container {
@@ -91,6 +122,47 @@ footer > p {
 footer a {
     color: #888888;
     font-size: 12px;
+}
+
+/* 增大音频播放器样式 */
+audio {
+    width: 100%;
+    max-width: 600px;
+    height: 60px;
+    margin: 20px auto;
+    border-radius: 30px;
+    background: #222222;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+audio::-webkit-media-controls-panel {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 30px;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: white;
+    font-weight: bold;
+}
+
+audio::-webkit-media-controls-timeline {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
 }
 
 

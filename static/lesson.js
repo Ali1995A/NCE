@@ -21,6 +21,18 @@
         const mp3Src = `${filename}.mp3`;
         const lrcSrc = `${filename}.lrc`;
 
+        // 保存学习进度
+        function saveStudyProgress() {
+            const progress = {
+                lastBook: book,
+                lastLesson: filename.split('/').pop()
+            };
+            localStorage.setItem('nce_study_progress', JSON.stringify(progress));
+        }
+
+        // 页面加载时自动保存进度
+        saveStudyProgress();
+
         /** DOM 引用 */
         const audio = document.getElementById('player');
         const content = document.getElementById('content');
@@ -28,6 +40,8 @@
         const bookTitleEl = document.getElementById('book-title');
         const bookImgEl = document.getElementById('book-img');
         const lessonTitleEl = document.getElementById('lesson-title');
+        const backButton = document.getElementById('back-button');
+        const homeButton = document.getElementById('home-button');
 
         /** 数据结构 */
         const state = {
@@ -163,6 +177,15 @@
                 item => cur > item.start && (cur < item.end || !item.end)
             );
             if (idx !== -1) highlight(idx);
+        });
+
+        // 导航按钮事件监听
+        backButton.addEventListener('click', () => {
+            window.history.back();
+        });
+
+        homeButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
         });
 
         // 初始化

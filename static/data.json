@@ -2,27 +2,39 @@
   "1": [
     {
       "title": "Excuse Me",
-      "filename": "001&002－Excuse Me"
+      "filename": "001&002－Excuse Me",
+      "oddTitle": "Excuse Me",
+      "evenTitle": "Excuse Me"
     },
     {
       "title": "Sorry, Sir.",
-      "filename": "003&004－Sorry, Sir."
+      "filename": "003&004－Sorry, Sir.",
+      "oddTitle": "Sorry, Sir.",
+      "evenTitle": "Sorry, Sir."
     },
     {
       "title": "Nice to Meet You.",
-      "filename": "005&006－Nice to Meet You."
+      "filename": "005&006－Nice to Meet You.",
+      "oddTitle": "Nice to Meet You.",
+      "evenTitle": "Nice to Meet You."
     },
     {
       "title": "Are You a Teacher",
-      "filename": "007&008－Are You a Teacher"
+      "filename": "007&008－Are You a Teacher",
+      "oddTitle": "Are You a Teacher",
+      "evenTitle": "Are You a Teacher"
     },
     {
       "title": "How Are You Today",
-      "filename": "009&010－How Are You Today"
+      "filename": "009&010－How Are You Today",
+      "oddTitle": "How Are You Today",
+      "evenTitle": "How Are You Today"
     },
     {
       "title": "Is This Your Shirt",
-      "filename": "011&012－Is This Your Shirt"
+      "filename": "011&012－Is This Your Shirt",
+      "oddTitle": "Is This Your Shirt",
+      "evenTitle": "Is This Your Shirt"
     },
     {
       "title": "A New Dress",

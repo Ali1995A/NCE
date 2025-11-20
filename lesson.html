@@ -6,16 +6,30 @@
     <title>新概念英语 - 课文点读</title>
     <link rel="stylesheet" href="static/base.css">
     <link rel="stylesheet" href="static/lesson.css">
+    <!-- 书签图标 -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGH98NK6E0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-HGH98NK6E0');
+    </script>
     <script src="static/lesson.js"></script>
 </head>
 <body>
 <div class="container">
-    <a href="index.html">
-        <div class="header">
-            <h1>新概念英语</h1>
-            <p>New Concept English</p>
+    <div class="header">
+        <h1>新概念英语</h1>
+        <p>New Concept English</p>
+        <div class="navigation-buttons">
+            <button id="back-button" class="nav-button">← 返回</button>
+            <button id="home-button" class="nav-button">🏠 主页</button>
         </div>
-    </a>
+    </div>
 </div>
 <div class="book-container">
     <a id="book" href="book.html">
