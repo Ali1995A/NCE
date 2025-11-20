@@ -3,326 +3,434 @@
     {
       "title": "Excuse Me",
       "filename": "001&002－Excuse Me",
-      "oddTitle": "Excuse Me",
-      "evenTitle": "Excuse Me"
+      "oddTitle": "Excuse Me (Lesson 1)",
+      "evenTitle": "Excuse Me (Lesson 2)"
     },
     {
       "title": "Sorry, Sir.",
       "filename": "003&004－Sorry, Sir.",
-      "oddTitle": "Sorry, Sir.",
-      "evenTitle": "Sorry, Sir."
+      "oddTitle": "Sorry, Sir. (Lesson 3)",
+      "evenTitle": "Sorry, Sir. (Lesson 4)"
     },
     {
       "title": "Nice to Meet You.",
       "filename": "005&006－Nice to Meet You.",
-      "oddTitle": "Nice to Meet You.",
-      "evenTitle": "Nice to Meet You."
+      "oddTitle": "Nice to Meet You. (Lesson 5)",
+      "evenTitle": "Nice to Meet You. (Lesson 6)"
     },
     {
       "title": "Are You a Teacher",
       "filename": "007&008－Are You a Teacher",
-      "oddTitle": "Are You a Teacher",
-      "evenTitle": "Are You a Teacher"
+      "oddTitle": "Are You a Teacher (Lesson 7)",
+      "evenTitle": "Are You a Teacher (Lesson 8)"
     },
     {
       "title": "How Are You Today",
       "filename": "009&010－How Are You Today",
-      "oddTitle": "How Are You Today",
-      "evenTitle": "How Are You Today"
+      "oddTitle": "How Are You Today (Lesson 9)",
+      "evenTitle": "How Are You Today (Lesson 10)"
     },
     {
       "title": "Is This Your Shirt",
       "filename": "011&012－Is This Your Shirt",
-      "oddTitle": "Is This Your Shirt",
-      "evenTitle": "Is This Your Shirt"
+      "oddTitle": "Is This Your Shirt (Lesson 11)",
+      "evenTitle": "Is This Your Shirt (Lesson 12)"
     },
     {
       "title": "A New Dress",
       "filename": "013&014－A New Dress",
-      "oddTitle": "A New Dress",
-      "evenTitle": "A New Dress"
+      "oddTitle": "A New Dress (Lesson 13)",
+      "evenTitle": "A New Dress (Lesson 14)"
     },
     {
       "title": "Your Passports, Please.",
       "filename": "015&016－Your Passports, Please.",
-      "oddTitle": "Your Passports, Please.",
-      "evenTitle": "Your Passports, Please."
+      "oddTitle": "Your Passports, Please. (Lesson 15)",
+      "evenTitle": "Your Passports, Please. (Lesson 16)"
     },
     {
       "title": "How do you do",
       "filename": "017&018－How do you do",
-      "oddTitle": "How do you do",
-      "evenTitle": "How do you do"
+      "oddTitle": "How do you do (Lesson 17)",
+      "evenTitle": "How do you do (Lesson 18)"
     },
     {
       "title": "Tired and Thirsty",
       "filename": "019&020－Tired and Thirsty",
-      "oddTitle": "Tired and Thirsty",
-      "evenTitle": "Tired and Thirsty"
+      "oddTitle": "Tired and Thirsty (Lesson 19)",
+      "evenTitle": "Tired and Thirsty (Lesson 20)"
     },
     {
       "title": "Which Book",
       "filename": "021&022－Which Book",
-      "oddTitle": "Which Book",
-      "evenTitle": "Which Book"
+      "oddTitle": "Which Book (Lesson 21)",
+      "evenTitle": "Which Book (Lesson 22)"
     },
     {
       "title": "Which Glasses",
       "filename": "023&024－Which Glasses",
-      "oddTitle": "Which Glasses",
-      "evenTitle": "Which Glasses"
+      "oddTitle": "Which Glasses (Lesson 23)",
+      "evenTitle": "Which Glasses (Lesson 24)"
     },
     {
       "title": "Mrs. Smith's Kitchen",
       "filename": "025&026－Mrs. Smith's Kitchen",
-      "oddTitle": "Mrs. Smith's Kitchen",
-      "evenTitle": "Mrs. Smith's Kitchen"
+      "oddTitle": "Mrs. Smith's Kitchen (Lesson 25)",
+      "evenTitle": "Mrs. Smith's Kitchen (Lesson 26)"
     },
     {
       "title": "Mrs. Smith's Living Room",
       "filename": "027&028－Mrs. Smith's Living Room",
-      "oddTitle": "Mrs. Smith's Living Room",
-      "evenTitle": "Mrs. Smith's Living Room"
+      "oddTitle": "Mrs. Smith's Living Room (Lesson 27)",
+      "evenTitle": "Mrs. Smith's Living Room (Lesson 28)"
     },
     {
       "title": "Come In, Amy.",
       "filename": "029&030－Come In, Amy.",
-      "oddTitle": "Come In, Amy.",
-      "evenTitle": "Come In, Amy."
+      "oddTitle": "Come In, Amy. (Lesson 29)",
+      "evenTitle": "Come In, Amy. (Lesson 30)"
     },
     {
       "title": "Where's Sally",
       "filename": "031&032－Where's Sally",
-      "oddTitle": "Where's Sally",
-      "evenTitle": "Where's Sally"
+      "oddTitle": "Where's Sally (Lesson 31)",
+      "evenTitle": "Where's Sally (Lesson 32)"
     },
     {
       "title": "A Fine Day",
       "filename": "033&034－A Fine Day",
-      "oddTitle": "A Fine Day",
-      "evenTitle": "A Fine Day"
+      "oddTitle": "A Fine Day (Lesson 33)",
+      "evenTitle": "A Fine Day (Lesson 34)"
     },
     {
       "title": "Our Village",
       "filename": "035&036－Our Village",
-      "oddTitle": "Our Village",
-      "evenTitle": "Our Village"
+      "oddTitle": "Our Village (Lesson 35)",
+      "evenTitle": "Our Village (Lesson 36)"
     },
     {
       "title": "Making a Bookcase",
-      "filename": "037&038－Making a Bookcase"
+      "filename": "037&038－Making a Bookcase",
+      "oddTitle": "Making a Bookcase (Lesson 37)",
+      "evenTitle": "Making a Bookcase (Lesson 38)"
     },
     {
       "title": "Don't Drop It",
-      "filename": "039&040－Don't Drop It"
+      "filename": "039&040－Don't Drop It",
+      "oddTitle": "Don't Drop It (Lesson 39)",
+      "evenTitle": "Don't Drop It (Lesson 40)"
     },
     {
       "title": "Penny's Bag",
-      "filename": "041&042－Penny's Bag"
+      "filename": "041&042－Penny's Bag",
+      "oddTitle": "Penny's Bag (Lesson 41)",
+      "evenTitle": "Penny's Bag (Lesson 42)"
     },
     {
       "title": "Hurry Up",
-      "filename": "043&044－Hurry Up"
+      "filename": "043&044－Hurry Up",
+      "oddTitle": "Hurry Up (Lesson 43)",
+      "evenTitle": "Hurry Up (Lesson 44)"
     },
     {
       "title": "The Boss's Letter",
-      "filename": "045&046－The Boss's Letter"
+      "filename": "045&046－The Boss's Letter",
+      "oddTitle": "The Boss's Letter (Lesson 45)",
+      "evenTitle": "The Boss's Letter (Lesson 46)"
     },
     {
       "title": "A Cup of Coffee",
-      "filename": "047&048－A Cup of Coffee"
+      "filename": "047&048－A Cup of Coffee",
+      "oddTitle": "A Cup of Coffee (Lesson 47)",
+      "evenTitle": "A Cup of Coffee (Lesson 48)"
     },
     {
       "title": "At the Butcher's",
-      "filename": "049&050－At the Butcher's"
+      "filename": "049&050－At the Butcher's",
+      "oddTitle": "At the Butcher's (Lesson 49)",
+      "evenTitle": "At the Butcher's (Lesson 50)"
     },
     {
       "title": "A Pleasant Climate",
-      "filename": "051&052－A Pleasant Climate"
+      "filename": "051&052－A Pleasant Climate",
+      "oddTitle": "A Pleasant Climate (Lesson 51)",
+      "evenTitle": "A Pleasant Climate (Lesson 52)"
     },
     {
       "title": "An Interesting Climate",
-      "filename": "053&054－An Interesting Climate"
+      "filename": "053&054－An Interesting Climate",
+      "oddTitle": "An Interesting Climate (Lesson 53)",
+      "evenTitle": "An Interesting Climate (Lesson 54)"
     },
     {
       "title": "The Sawyer Family",
-      "filename": "055&056－The Sawyer Family"
+      "filename": "055&056－The Sawyer Family",
+      "oddTitle": "The Sawyer Family (Lesson 55)",
+      "evenTitle": "The Sawyer Family (Lesson 56)"
     },
     {
       "title": "An Unusual Day",
-      "filename": "057&058－An Unusual Day"
+      "filename": "057&058－An Unusual Day",
+      "oddTitle": "An Unusual Day (Lesson 57)",
+      "evenTitle": "An Unusual Day (Lesson 58)"
     },
     {
       "title": "Is That All",
-      "filename": "059&060－Is That All"
+      "filename": "059&060－Is That All",
+      "oddTitle": "Is That All (Lesson 59)",
+      "evenTitle": "Is That All (Lesson 60)"
     },
     {
       "title": "A Bad Cold",
-      "filename": "061&062－A Bad Cold"
+      "filename": "061&062－A Bad Cold",
+      "oddTitle": "A Bad Cold (Lesson 61)",
+      "evenTitle": "A Bad Cold (Lesson 62)"
     },
     {
       "title": "Thank You, Doctor.",
-      "filename": "063&064－Thank You, Doctor."
+      "filename": "063&064－Thank You, Doctor.",
+      "oddTitle": "Thank You, Doctor. (Lesson 63)",
+      "evenTitle": "Thank You, Doctor. (Lesson 64)"
     },
     {
       "title": "Not a Baby",
-      "filename": "065&066－Not a Baby"
+      "filename": "065&066－Not a Baby",
+      "oddTitle": "Not a Baby (Lesson 65)",
+      "evenTitle": "Not a Baby (Lesson 66)"
     },
     {
       "title": "The Weekend",
-      "filename": "067&068－The Weekend"
+      "filename": "067&068－The Weekend",
+      "oddTitle": "The Weekend (Lesson 67)",
+      "evenTitle": "The Weekend (Lesson 68)"
     },
     {
       "title": "The Car Race",
-      "filename": "069&070－The Car Race"
+      "filename": "069&070－The Car Race",
+      "oddTitle": "The Car Race (Lesson 69)",
+      "evenTitle": "The Car Race (Lesson 70)"
     },
     {
       "title": "He's Awful",
-      "filename": "071&072－He's Awful"
+      "filename": "071&072－He's Awful",
+      "oddTitle": "He's Awful (Lesson 71)",
+      "evenTitle": "He's Awful (Lesson 72)"
     },
     {
       "title": "The Way to King Street",
-      "filename": "073&074－The Way to King Street"
+      "filename": "073&074－The Way to King Street",
+      "oddTitle": "The Way to King Street (Lesson 73)",
+      "evenTitle": "The Way to King Street (Lesson 74)"
     },
     {
       "title": "Uncomfortable Shoes",
-      "filename": "075&076－Uncomfortable Shoes"
+      "filename": "075&076－Uncomfortable Shoes",
+      "oddTitle": "Uncomfortable Shoes (Lesson 75)",
+      "evenTitle": "Uncomfortable Shoes (Lesson 76)"
     },
     {
       "title": "Terrible Toothache",
-      "filename": "077&078－Terrible Toothache"
+      "filename": "077&078－Terrible Toothache",
+      "oddTitle": "Terrible Toothache (Lesson 77)",
+      "evenTitle": "Terrible Toothache (Lesson 78)"
     },
     {
       "title": "Carol's Shopping List",
-      "filename": "079&080－Carol's Shopping List"
+      "filename": "079&080－Carol's Shopping List",
+      "oddTitle": "Carol's Shopping List (Lesson 79)",
+      "evenTitle": "Carol's Shopping List (Lesson 80)"
     },
     {
       "title": "Roast Beef and Potatoes",
-      "filename": "081&082－Roast Beef and Potatoes"
+      "filename": "081&082－Roast Beef and Potatoes",
+      "oddTitle": "Roast Beef and Potatoes (Lesson 81)",
+      "evenTitle": "Roast Beef and Potatoes (Lesson 82)"
     },
     {
       "title": "Going on Holiday",
-      "filename": "083&084－Going on Holiday"
+      "filename": "083&084－Going on Holiday",
+      "oddTitle": "Going on Holiday (Lesson 83)",
+      "evenTitle": "Going on Holiday (Lesson 84)"
     },
     {
       "title": "Paris in the Spring.",
-      "filename": "085&086－Paris in the Spring."
+      "filename": "085&086－Paris in the Spring.",
+      "oddTitle": "Paris in the Spring. (Lesson 85)",
+      "evenTitle": "Paris in the Spring. (Lesson 86)"
     },
     {
       "title": "A Car Crash",
-      "filename": "087&088－A Car Crash"
+      "filename": "087&088－A Car Crash",
+      "oddTitle": "A Car Crash (Lesson 87)",
+      "evenTitle": "A Car Crash (Lesson 88)"
     },
     {
       "title": "For Sale",
-      "filename": "089&090－For Sale"
+      "filename": "089&090－For Sale",
+      "oddTitle": "For Sale (Lesson 89)",
+      "evenTitle": "For Sale (Lesson 90)"
     },
     {
       "title": "Poor Ian",
-      "filename": "091&092－Poor Ian"
+      "filename": "091&092－Poor Ian",
+      "oddTitle": "Poor Ian (Lesson 91)",
+      "evenTitle": "Poor Ian (Lesson 92)"
     },
     {
       "title": "Our New Neighbour",
-      "filename": "093&094－Our New Neighbour"
+      "filename": "093&094－Our New Neighbour",
+      "oddTitle": "Our New Neighbour (Lesson 93)",
+      "evenTitle": "Our New Neighbour (Lesson 94)"
     },
     {
       "title": "Tickets, Please.",
-      "filename": "095&096－Tickets, Please."
+      "filename": "095&096－Tickets, Please.",
+      "oddTitle": "Tickets, Please. (Lesson 95)",
+      "evenTitle": "Tickets, Please. (Lesson 96)"
     },
     {
       "title": "A Small Blue Case",
-      "filename": "097&098－A Small Blue Case"
+      "filename": "097&098－A Small Blue Case",
+      "oddTitle": "A Small Blue Case (Lesson 97)",
+      "evenTitle": "A Small Blue Case (Lesson 98)"
     },
     {
       "title": "Ow",
-      "filename": "099&100－Ow"
+      "filename": "099&100－Ow",
+      "oddTitle": "Ow (Lesson 99)",
+      "evenTitle": "Ow (Lesson 100)"
     },
     {
       "title": "A Card From Jimmy",
-      "filename": "101&102－A Card From Jimmy"
+      "filename": "101&102－A Card From Jimmy",
+      "oddTitle": "A Card From Jimmy (Lesson 101)",
+      "evenTitle": "A Card From Jimmy (Lesson 102)"
     },
     {
       "title": "The French Test",
-      "filename": "103&104－The French Test"
+      "filename": "103&104－The French Test",
+      "oddTitle": "The French Test (Lesson 103)",
+      "evenTitle": "The French Test (Lesson 104)"
     },
     {
       "title": "Full of Mistakes",
-      "filename": "105&106－Full of Mistakes"
+      "filename": "105&106－Full of Mistakes",
+      "oddTitle": "Full of Mistakes (Lesson 105)",
+      "evenTitle": "Full of Mistakes (Lesson 106)"
     },
     {
       "title": "It's Too Small.",
-      "filename": "107&108－It's Too Small."
+      "filename": "107&108－It's Too Small.",
+      "oddTitle": "It's Too Small. (Lesson 107)",
+      "evenTitle": "It's Too Small. (Lesson 108)"
     },
     {
       "title": "A Good Idea",
-      "filename": "109&110－A Good Idea"
+      "filename": "109&110－A Good Idea",
+      "oddTitle": "A Good Idea (Lesson 109)",
+      "evenTitle": "A Good Idea (Lesson 110)"
     },
     {
       "title": "The Most Expensive Model",
-      "filename": "111&112－The Most Expensive Model"
+      "filename": "111&112－The Most Expensive Model",
+      "oddTitle": "The Most Expensive Model (Lesson 111)",
+      "evenTitle": "The Most Expensive Model (Lesson 112)"
     },
     {
       "title": "Small Change",
-      "filename": "113&114－Small Change"
+      "filename": "113&114－Small Change",
+      "oddTitle": "Small Change (Lesson 113)",
+      "evenTitle": "Small Change (Lesson 114)"
     },
     {
       "title": "Knock, Knock",
-      "filename": "115&116－Knock, Knock"
+      "filename": "115&116－Knock, Knock",
+      "oddTitle": "Knock, Knock (Lesson 115)",
+      "evenTitle": "Knock, Knock (Lesson 116)"
     },
     {
       "title": "Tommy's Breakfast",
-      "filename": "117&118－Tommy's Breakfast"
+      "filename": "117&118－Tommy's Breakfast",
+      "oddTitle": "Tommy's Breakfast (Lesson 117)",
+      "evenTitle": "Tommy's Breakfast (Lesson 118)"
     },
     {
       "title": "A True Story",
-      "filename": "119&120－A True Story"
+      "filename": "119&120－A True Story",
+      "oddTitle": "A True Story (Lesson 119)",
+      "evenTitle": "A True Story (Lesson 120)"
     },
     {
       "title": "The Man in a Hat",
-      "filename": "121&122－The Man in a Hat"
+      "filename": "121&122－The Man in a Hat",
+      "oddTitle": "The Man in a Hat (Lesson 121)",
+      "evenTitle": "The Man in a Hat (Lesson 122)"
     },
     {
       "title": "A Trip to Australia",
-      "filename": "123&124－A Trip to Australia"
+      "filename": "123&124－A Trip to Australia",
+      "oddTitle": "A Trip to Australia (Lesson 123)",
+      "evenTitle": "A Trip to Australia (Lesson 124)"
     },
     {
       "title": "Tea for Two",
-      "filename": "125&126－Tea for Two"
+      "filename": "125&126－Tea for Two",
+      "oddTitle": "Tea for Two (Lesson 125)",
+      "evenTitle": "Tea for Two (Lesson 126)"
     },
     {
       "title": "A Famous Actress",
-      "filename": "127&128－A Famous Actress"
+      "filename": "127&128－A Famous Actress",
+      "oddTitle": "A Famous Actress (Lesson 127)",
+      "evenTitle": "A Famous Actress (Lesson 128)"
     },
     {
       "title": "Seventy Miles an Hour",
-      "filename": "129&130－Seventy Miles an Hour"
+      "filename": "129&130－Seventy Miles an Hour",
+      "oddTitle": "Seventy Miles an Hour (Lesson 129)",
+      "evenTitle": "Seventy Miles an Hour (Lesson 130)"
     },
     {
       "title": "Don't be So Sure",
-      "filename": "131&132－Don't be So Sure"
+      "filename": "131&132－Don't be So Sure",
+      "oddTitle": "Don't be So Sure (Lesson 131)",
+      "evenTitle": "Don't be So Sure (Lesson 132)"
     },
     {
       "title": "Sensational News",
-      "filename": "133&134－Sensational News"
+      "filename": "133&134－Sensational News",
+      "oddTitle": "Sensational News (Lesson 133)",
+      "evenTitle": "Sensational News (Lesson 134)"
     },
     {
       "title": "The Latest Report",
-      "filename": "135&136－The Latest Report"
+      "filename": "135&136－The Latest Report",
+      "oddTitle": "The Latest Report (Lesson 135)",
+      "evenTitle": "The Latest Report (Lesson 136)"
     },
     {
       "title": "A Pleasant Dream",
-      "filename": "137&138－A Pleasant Dream"
+      "filename": "137&138－A Pleasant Dream",
+      "oddTitle": "A Pleasant Dream (Lesson 137)",
+      "evenTitle": "A Pleasant Dream (Lesson 138)"
     },
     {
       "title": "Is That You, John",
-      "filename": "139&140－Is That You, John"
+      "filename": "139&140－Is That You, John",
+      "oddTitle": "Is That You, John (Lesson 139)",
+      "evenTitle": "Is That You, John (Lesson 140)"
     },
     {
       "title": "Sally's First Train Ride",
-      "filename": "141&142－Sally's First Train Ride"
+      "filename": "141&142－Sally's First Train Ride",
+      "oddTitle": "Sally's First Train Ride (Lesson 141)",
+      "evenTitle": "Sally's First Train Ride (Lesson 142)"
     },
     {
       "title": "A Walk Through the Woods",
-      "filename": "143&144－A Walk Through the Woods"
+      "filename": "143&144－A Walk Through the Woods",
+      "oddTitle": "A Walk Through the Woods (Lesson 143)",
+      "evenTitle": "A Walk Through the Woods (Lesson 144)"
     }
   ],
   "2": [

@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     color: #ffffff;
     background-color: #222222;
+    padding-bottom: 70px; /* 为固定底部的音频播放器预留空间 */
 }
 
 
@@ -22,14 +23,14 @@ hr{
 .header {
     text-align: center;
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
     position: relative;
 }
 
 .header h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     animation: fadeInDown 1s ease-out;
 }
@@ -38,36 +39,38 @@ hr{
     font-size: 0.8em;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.3s both;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .navigation-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 8px;
 }
 
 .nav-button {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .nav-button:active {
-    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0.98);
 }
 
 .book-container {
@@ -124,45 +127,59 @@ footer a {
     font-size: 12px;
 }
 
-/* 增大音频播放器样式 */
+/* 音频播放器样式 - Apple风格 */
 audio {
     width: 100%;
     max-width: 600px;
-    height: 60px;
-    margin: 20px auto;
-    border-radius: 30px;
-    background: #222222;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    height: 50px;
+    margin: 15px auto;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 audio::-webkit-media-controls-panel {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 audio::-webkit-media-controls-play-button {
     background-color: white;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
 }
 
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
     color: white;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 12px;
 }
 
 audio::-webkit-media-controls-timeline {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin: 0 8px;
+    height: 4px;
 }
 
 audio::-webkit-media-controls-volume-slider {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    height: 4px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -200,7 +217,83 @@ audio::-webkit-media-controls-volume-slider {
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 12px 0;
+    }
+    
+    .header h1 {
+        font-size: 1.8em;
+        margin-bottom: 3px;
+    }
+    
+    .header p {
+        margin-bottom: 8px;
+    }
+    
+    .navigation-buttons {
+        gap: 8px;
+        margin-top: 6px;
+    }
+    
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 12px;
+        border-radius: 10px;
+    }
+    
+    audio {
+        height: 45px;
+        margin: 12px auto;
+        border-radius: 22px;
+    }
+    
+    audio::-webkit-media-controls-play-button {
+        width: 28px;
+        height: 28px;
+    }
+    
+    audio::-webkit-media-controls-current-time-display,
+    audio::-webkit-media-controls-time-remaining-display {
+        font-size: 11px;
+    }
+    
+    .book-header {
+        margin: 12px;
+    }
+    
+    .book-header img {
+        max-width: 80px;
+    }
+}
+
+/* 确保音频播放器在非常小的屏幕上仍然可见 */
+@media (max-width: 480px) {
     .header h1 {
         font-size: 1.5em;
     }
+    
+    audio {
+        height: 40px;
+        margin: 10px auto;
+    }
+    
+    audio::-webkit-media-controls-play-button {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* 固定底部音频播放器，确保始终可见 */
+footer {
+    position: sticky;
+    bottom: 0;
+    background: rgba(34, 34, 34, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+    padding: 8px 10px;
+}
+
+footer audio {
+    margin: 0 auto;
 }
