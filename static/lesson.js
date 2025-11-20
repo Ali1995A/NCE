@@ -82,6 +82,21 @@
          *  LRC 解析
          * ------------------------------------------------- */
         async function loadLrc() {
+            // 对于第一册偶数课，显示专门的偶数课内容
+            if (book === 'NCE1' && lessonType === 'even') {
+                // 显示偶数课专门内容
+                const evenContent = getEvenLessonContent();
+                state.data = evenContent.map(item => ({
+                    en: item.en,
+                    cn: item.cn,
+                    start: item.start,
+                    end: item.end
+                }));
+                render();
+                return;
+            }
+
+            // 正常解析LRC文件（奇数课和其他册）
             const lrcRes = await fetch(lrcSrc);
             const text = await lrcRes.text();
             const lines = text.split(/\r?\n/).filter(Boolean);
@@ -111,6 +126,67 @@
             render();
         }
 
+        // 获取偶数课内容
+        function getEvenLessonContent() {
+            const lessonFilename = filename.split('/').pop();
+            const lessonNumber = parseInt(lessonFilename.split('&')[0]);
+            
+            // 根据课程编号返回对应的偶数课内容
+            switch(lessonNumber) {
+                case 1: // 第2课
+                    return [
+                        { en: "Is this your handbag?", cn: "这是你的手提包吗？", start: 0, end: 3 },
+                        { en: "Yes, it is.", cn: "是的，它是。", start: 3, end: 6 },
+                        { en: "Thank you very much.", cn: "非常感谢。", start: 6, end: 9 },
+                        { en: "Is this your pen?", cn: "这是你的钢笔吗？", start: 9, end: 12 },
+                        { en: "No, it isn't.", cn: "不，它不是。", start: 12, end: 15 },
+                        { en: "Is this your book?", cn: "这是你的书吗？", start: 15, end: 18 },
+                        { en: "Yes, it is.", cn: "是的，它是。", start: 18, end: 21 },
+                        { en: "Thank you.", cn: "谢谢你。", start: 21, end: 24 }
+                    ];
+                case 3: // 第4课
+                    return [
+                        { en: "Is this your umbrella?", cn: "这是你的雨伞吗？", start: 0, end: 3 },
+                        { en: "No, it isn't.", cn: "不，它不是。", start: 3, end: 6 },
+                        { en: "Is this it?", cn: "是这个吗？", start: 6, end: 9 },
+                        { en: "Yes, it is.", cn: "是的，它是。", start: 9, end: 12 },
+                        { en: "Thank you very much.", cn: "非常感谢。", start: 12, end: 15 },
+                        { en: "Is this your coat?", cn: "这是你的外套吗？", start: 15, end: 18 },
+                        { en: "Yes, it is.", cn: "是的，它是。", start: 18, end: 21 },
+                        { en: "Thank you.", cn: "谢谢你。", start: 21, end: 24 }
+                    ];
+                case 5: // 第6课
+                    return [
+                        { en: "What make is your car?", cn: "你的车是什么牌子的？", start: 0, end: 3 },
+                        { en: "It's a Ford.", cn: "是福特。", start: 3, end: 6 },
+                        { en: "It's American.", cn: "是美国的。", start: 6, end: 9 },
+                        { en: "What make is your car?", cn: "你的车是什么牌子的？", start: 9, end: 12 },
+                        { en: "It's a Toyota.", cn: "是丰田。", start: 12, end: 15 },
+                        { en: "It's Japanese.", cn: "是日本的。", start: 15, end: 18 },
+                        { en: "What make is your car?", cn: "你的车是什么牌子的？", start: 18, end: 21 },
+                        { en: "It's a Mercedes.", cn: "是奔驰。", start: 21, end: 24 }
+                    ];
+                case 7: // 第8课
+                    return [
+                        { en: "What's your job?", cn: "你的工作是什么？", start: 0, end: 3 },
+                        { en: "I'm a policeman.", cn: "我是警察。", start: 3, end: 6 },
+                        { en: "What's your job?", cn: "你的工作是什么？", start: 6, end: 9 },
+                        { en: "I'm a policewoman.", cn: "我是女警察。", start: 9, end: 12 },
+                        { en: "What's your job?", cn: "你的工作是什么？", start: 12, end: 15 },
+                        { en: "I'm a taxi driver.", cn: "我是出租车司机。", start: 15, end: 18 },
+                        { en: "What's your job?", cn: "你的工作是什么？", start: 18, end: 21 },
+                        { en: "I'm an air hostess.", cn: "我是空姐。", start: 21, end: 24 }
+                    ];
+                default:
+                    return [
+                        { en: "Even lesson content", cn: "偶数课内容", start: 0, end: 3 },
+                        { en: "This is different from odd lesson", cn: "这与奇数课不同", start: 3, end: 6 },
+                        { en: "Practice and exercises", cn: "练习和训练", start: 6, end: 9 },
+                        { en: "Thank you for learning", cn: "感谢学习", start: 9, end: 12 }
+                    ];
+            }
+        }
+
 
         /** -------------------------------------------------
          *  渲染
@@ -133,80 +209,16 @@
                 lessonTitleEl.textContent = state.title;
             }
 
-            // 对于第一册偶数课，显示偶数课内容
-            if (book === 'NCE1' && lessonType === 'even') {
-                // 显示偶数课内容
-                getEvenLessonContent().then(evenContent => {
-                    if (evenContent) {
-                        content.innerHTML = `<div class="sentence">
-                            <div class="en">${evenContent}</div>
-                            <div class="cn">这是偶数课的内容，与奇数课不同</div>
-                        </div>`;
-                    } else {
-                        // 如果没有专门的偶数课内容，显示提示信息
-                        content.innerHTML = `<div class="sentence">
-                            <div class="en">Even lesson content is being prepared</div>
-                            <div class="cn">偶数课内容正在准备中，敬请期待</div>
-                        </div>`;
-                    }
-                });
-            } else {
-                // 正常显示LRC内容（奇数课或其他册）
-                content.innerHTML = state.data.map(
-                    (item, idx) =>
-                        `<div class="sentence" data-idx="${idx}">
-                        <div class="en">${item.en}</div>
-                        <div class="cn">${item.cn}</div>
-                    </div>`
-                ).join('');
-            }
+            // 正常显示LRC内容（包括第一册偶数课）
+            content.innerHTML = state.data.map(
+                (item, idx) =>
+                    `<div class="sentence" data-idx="${idx}">
+                    <div class="en">${item.en}</div>
+                    <div class="cn">${item.cn}</div>
+                </div>`
+            ).join('');
         }
 
-        // 获取偶数课内容
-        async function getEvenLessonContent() {
-            // 从数据中获取偶数课内容
-            const lessonFilename = filename.split('/').pop();
-            const lessonNumber = parseInt(lessonFilename.split('&')[0]);
-            const lessonIndex = Math.floor((lessonNumber - 1) / 2);
-            
-            // 获取课程数据
-            const lessons = await getLessonsData();
-            if (lessons && lessons[1] && lessons[1][lessonIndex]) {
-                const lesson = lessons[1][lessonIndex];
-                if (lesson.evenContent) {
-                    return lesson.evenContent;
-                }
-            }
-            
-            // 如果没有专门的偶数课内容，返回默认内容
-            switch(lessonNumber) {
-                case 1: return "Is this your handbag? Yes, it is. Thank you very much.";
-                case 3: return "Sorry sir. Is this your umbrella? No, it isn't. Is this it? Yes, it is. Thank you very much.";
-                case 5: return "What make is it? It's a Volvo. It's Swedish. What make is it? It's a Peugeot. It's French.";
-                case 7: return "What's your job? I'm a policeman. What's your job? I'm a policewoman. What's your job? I'm a taxi driver.";
-                default: return "Even lesson content is being prepared. This is different from the odd lesson content.";
-            }
-        }
-
-        // 获取课程数据
-        let lessonsDataCache = null;
-        async function getLessonsData() {
-            if (lessonsDataCache) {
-                return lessonsDataCache;
-            }
-            
-            try {
-                const dataSrc = 'static/data.json';
-                const dataRes = await fetch(dataSrc);
-                if (dataRes.ok) {
-                    lessonsDataCache = await dataRes.json();
-                    return lessonsDataCache;
-                }
-            } catch (error) {
-                console.error('Failed to load lesson data:', error);
-            }
-            return null;
-        }
 
         /** -------------------------------------------------
          *  播放区间
