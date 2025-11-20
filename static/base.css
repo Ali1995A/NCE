@@ -42,6 +42,25 @@ hr{
     margin-bottom: 10px;
 }
 
+.nav-container {
+    position: sticky;
+    top: 0;
+    background: rgba(34, 34, 34, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .navigation-buttons {
     display: flex;
     justify-content: center;
@@ -71,6 +90,11 @@ hr{
 .nav-button:active {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(0.98);
+}
+
+.nav-icon {
+    font-size: 14px;
+    margin-right: 4px;
 }
 
 .book-container {
@@ -230,15 +254,28 @@ audio::-webkit-media-controls-mute-button {
         margin-bottom: 8px;
     }
     
-    .navigation-buttons {
+    .nav-container {
+        padding: 8px 12px;
+    }
+    
+    .nav-buttons {
         gap: 8px;
-        margin-top: 6px;
     }
     
     .nav-button {
         padding: 6px 12px;
         font-size: 12px;
         border-radius: 10px;
+    }
+    
+    .nav-icon {
+        font-size: 12px;
+        margin-right: 3px;
+    }
+    
+    .navigation-buttons {
+        gap: 8px;
+        margin-top: 6px;
     }
     
     audio {
