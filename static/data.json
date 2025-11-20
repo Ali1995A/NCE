@@ -38,51 +38,75 @@
     },
     {
       "title": "A New Dress",
-      "filename": "013&014－A New Dress"
+      "filename": "013&014－A New Dress",
+      "oddTitle": "A New Dress",
+      "evenTitle": "A New Dress"
     },
     {
       "title": "Your Passports, Please.",
-      "filename": "015&016－Your Passports, Please."
+      "filename": "015&016－Your Passports, Please.",
+      "oddTitle": "Your Passports, Please.",
+      "evenTitle": "Your Passports, Please."
     },
     {
       "title": "How do you do",
-      "filename": "017&018－How do you do"
+      "filename": "017&018－How do you do",
+      "oddTitle": "How do you do",
+      "evenTitle": "How do you do"
     },
     {
       "title": "Tired and Thirsty",
-      "filename": "019&020－Tired and Thirsty"
+      "filename": "019&020－Tired and Thirsty",
+      "oddTitle": "Tired and Thirsty",
+      "evenTitle": "Tired and Thirsty"
     },
     {
       "title": "Which Book",
-      "filename": "021&022－Which Book"
+      "filename": "021&022－Which Book",
+      "oddTitle": "Which Book",
+      "evenTitle": "Which Book"
     },
     {
       "title": "Which Glasses",
-      "filename": "023&024－Which Glasses"
+      "filename": "023&024－Which Glasses",
+      "oddTitle": "Which Glasses",
+      "evenTitle": "Which Glasses"
     },
     {
       "title": "Mrs. Smith's Kitchen",
-      "filename": "025&026－Mrs. Smith's Kitchen"
+      "filename": "025&026－Mrs. Smith's Kitchen",
+      "oddTitle": "Mrs. Smith's Kitchen",
+      "evenTitle": "Mrs. Smith's Kitchen"
     },
     {
       "title": "Mrs. Smith's Living Room",
-      "filename": "027&028－Mrs. Smith's Living Room"
+      "filename": "027&028－Mrs. Smith's Living Room",
+      "oddTitle": "Mrs. Smith's Living Room",
+      "evenTitle": "Mrs. Smith's Living Room"
     },
     {
       "title": "Come In, Amy.",
-      "filename": "029&030－Come In, Amy."
+      "filename": "029&030－Come In, Amy.",
+      "oddTitle": "Come In, Amy.",
+      "evenTitle": "Come In, Amy."
     },
     {
       "title": "Where's Sally",
-      "filename": "031&032－Where's Sally"
+      "filename": "031&032－Where's Sally",
+      "oddTitle": "Where's Sally",
+      "evenTitle": "Where's Sally"
     },
     {
       "title": "A Fine Day",
-      "filename": "033&034－A Fine Day"
+      "filename": "033&034－A Fine Day",
+      "oddTitle": "A Fine Day",
+      "evenTitle": "A Fine Day"
     },
     {
       "title": "Our Village",
-      "filename": "035&036－Our Village"
+      "filename": "035&036－Our Village",
+      "oddTitle": "Our Village",
+      "evenTitle": "Our Village"
     },
     {
       "title": "Making a Bookcase",

@@ -50,9 +50,23 @@
         })
 
         async function loadData() {
-            const dataSrc = 'static/data.json';
-            const dataRes = await fetch(dataSrc);
-            lessonsData = await dataRes.json();
+            try {
+                const dataSrc = 'static/data.json';
+                const dataRes = await fetch(dataSrc);
+                if (!dataRes.ok) {
+                    throw new Error(`HTTP error! status: ${dataRes.status}`);
+                }
+                lessonsData = await dataRes.json();
+            } catch (error) {
+                console.error('Failed to load lesson data:', error);
+                // 如果数据加载失败，显示错误信息
+                for (let i = 1; i <= 4; i++) {
+                    const container = document.getElementById(`book-${i}-lessons`);
+                    if (container) {
+                        container.innerHTML = '<div style="color: #ff6b6b; text-align: center; padding: 20px;">课程数据加载失败，请刷新页面重试</div>';
+                    }
+                }
+            }
         }
 
         // 生成课文列表的函数
@@ -60,57 +74,68 @@
             const container = document.getElementById(`book-${bookNumber}-lessons`);
             const lessons = lessonsData[bookNumber];
 
+            // 检查课程数据是否存在
+            if (!lessons || !Array.isArray(lessons)) {
+                container.innerHTML = '<div style="color: #ff6b6b; text-align: center; padding: 20px;">课程数据格式错误</div>';
+                return;
+            }
+
             container.innerHTML = '';
             lessons.forEach((lesson, index) => {
-                if (bookNumber === 1) {
-                    // 第一册：每项包含两课，分别显示奇数课和偶数课
-                    const oddLessonNumber = index * 2 + 1;
-                    const evenLessonNumber = index * 2 + 2;
-                    
-                    // 奇数课
-                    const oddLessonElement = document.createElement('a');
-                    oddLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
-                    oddLessonElement.className = 'lesson-item';
-                    oddLessonElement.innerHTML = `
-                        <span class="lesson-number">第${oddLessonNumber}课</span>
-                        <span class="lesson-title">${lesson.oddTitle || lesson.title}</span>
-                    `;
-                    // 添加进度保存
-                    oddLessonElement.addEventListener('click', () => {
-                        saveStudyProgress(`NCE${bookNumber}`, lesson.filename);
-                    });
-                    container.appendChild(oddLessonElement);
-                    
-                    // 偶数课（如果存在）
-                    if (evenLessonNumber <= 144) {
-                        const evenLessonElement = document.createElement('a');
-                        evenLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
-                        evenLessonElement.className = 'lesson-item';
-                        evenLessonElement.innerHTML = `
-                            <span class="lesson-number">第${evenLessonNumber}课</span>
-                            <span class="lesson-title">${lesson.evenTitle || lesson.title}</span>
+                try {
+                    if (bookNumber === 1) {
+                        // 第一册：每项包含两课，分别显示奇数课和偶数课
+                        const oddLessonNumber = index * 2 + 1;
+                        const evenLessonNumber = index * 2 + 2;
+                        
+                        // 奇数课
+                        const oddLessonElement = document.createElement('a');
+                        oddLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
+                        oddLessonElement.className = 'lesson-item';
+                        oddLessonElement.innerHTML = `
+                            <span class="lesson-number">第${oddLessonNumber}课</span>
+                            <span class="lesson-title">${lesson.title || '未知课程'}</span>
                         `;
                         // 添加进度保存
-                        evenLessonElement.addEventListener('click', () => {
+                        oddLessonElement.addEventListener('click', () => {
                             saveStudyProgress(`NCE${bookNumber}`, lesson.filename);
                         });
-                        container.appendChild(evenLessonElement);
+                        container.appendChild(oddLessonElement);
+                        
+                        // 偶数课（如果存在）
+                        if (evenLessonNumber <= 144) {
+                            const evenLessonElement = document.createElement('a');
+                            evenLessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
+                            evenLessonElement.className = 'lesson-item';
+                            evenLessonElement.innerHTML = `
+                                <span class="lesson-number">第${evenLessonNumber}课</span>
+                                <span class="lesson-title">${lesson.title || '未知课程'}</span>
+                            `;
+                            // 添加进度保存
+                            evenLessonElement.addEventListener('click', () => {
+                                saveStudyProgress(`NCE${bookNumber}`, lesson.filename);
+                            });
+                            container.appendChild(evenLessonElement);
+                        }
+                    } else {
+                        // 其他册：正常显示
+                        const lessonNumber = index + 1;
+                        const lessonElement = document.createElement('a');
+                        lessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
+                        lessonElement.className = 'lesson-item';
+                        lessonElement.innerHTML = `
+                            <span class="lesson-number">第${lessonNumber}课</span>
+                            <span class="lesson-title">${lesson.title || '未知课程'}</span>
+                        `;
+                        // 添加进度保存
+                        lessonElement.addEventListener('click', () => {
+                            saveStudyProgress(`NCE${bookNumber}`, lesson.filename);
+                        });
+                        container.appendChild(lessonElement);
                     }
-                } else {
-                    // 其他册：正常显示
-                    const lessonNumber = index + 1;
-                    const lessonElement = document.createElement('a');
-                    lessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
-                    lessonElement.className = 'lesson-item';
-                    lessonElement.innerHTML = `
-                        <span class="lesson-number">第${lessonNumber}课</span>
-                        <span class="lesson-title">${lesson.title}</span>
-                    `;
-                    // 添加进度保存
-                    lessonElement.addEventListener('click', () => {
-                        saveStudyProgress(`NCE${bookNumber}`, lesson.filename);
-                    });
-                    container.appendChild(lessonElement);
+                } catch (error) {
+                    console.error(`Error generating lesson ${index + 1} for book ${bookNumber}:`, error);
+                    // 如果单个课程生成失败，跳过该课程
                 }
             });
         }
